@@ -20,14 +20,13 @@ This implementation uses the following key technologies:
    pnpm install
    ```
 
-2. **Place the model file**: Ensure `kitten_tts_nano_v0_1.onnx` is in the `public/` directory
 
-3. **Start development server**:
+2. **Start development server**:
    ```bash
    pnpm run dev
    ```
 
-4. **Open in browser**: Navigate to `http://localhost:5173`
+3. **Open in browser**: Navigate to `http://localhost:5173`
 
 ## 📄 License
 
