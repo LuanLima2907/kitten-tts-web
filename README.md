@@ -1,69 +1,40 @@
-# React + TypeScript + Vite
+# KittenTTS Web Implementation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A browser-based implementation of [KittenTTS](https://github.com/KittenML/KittenTTS) using ONNX Runtime Web for client-side text-to-speech synthesis.
 
-Currently, two official plugins are available:
+## 🛠️ Technical Implementation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Architecture
 
-## Expanding the ESLint configuration
+This implementation uses the following key technologies:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React** - UI framework
+- **TypeScript** - Type safety and better development experience
+- **ONNX Runtime Web** - Machine learning inference in the browser
+- **Vite** - Build tool and development server
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Basic Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Place the model file**: Ensure `kitten_tts_nano_v0_1.onnx` is in the `public/` directory
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Start development server**:
+   ```bash
+   pnpm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. **Open in browser**: Navigate to `http://localhost:5173`
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📄 License
+
+This project follows the same license as the original KittenTTS project (Apache 2.0).
+
+## 🔗 References
+
+- [KittenTTS GitHub Repository](https://github.com/KittenML/KittenTTS)
+- [ONNX Runtime Web Documentation](https://onnxruntime.ai/docs/tutorials/web/)
+- [Web Audio API Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
